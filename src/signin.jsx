@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Forminput from './form-input'
 import Button from './button'
 import './signin.scss'
+
 import { signInWithGooglePopup, createUserDocumentFromAuth, signinAuthUserWithEmailAndPassword } from './firebase'
 const defaultformfield= {
     
@@ -18,20 +19,27 @@ const logGoogle= async ()=>{
 function Signin() {
     const [formfields,setformfields]=useState(defaultformfield)
     const {email,password,}=formfields
-    console.log(formfields)
+    
+    
     const resetformfields=()=>{
         setformfields(defaultformfield)
+    }
+    const signInWithGooglePopup= async()=>{
+         await signInWithGooglePopup()
+        
+        
     }
     const handlesubmit= async(event) =>{
         event.preventDefault()
        
-     try { const response= await signinAuthUserWithEmailAndPassword(email,password)
-        console.log(response)
+     try { const {user}= await signinAuthUserWithEmailAndPassword(email,password)
+    
+        
         resetformfields()
      } catch (error) { 
         switch (error.code) {
             case 'auth/wrong-password':
-            alert('incoreect password')
+            alert('incorrect password')
             break;
             case 'auth/user-not-found':
             alert('invalid email')
@@ -62,7 +70,7 @@ function Signin() {
         <Forminput
         label='password' type='password' required  onChange={handlechange} name='password' value={password}/>
        
-        <Button  type='submit'>Sign in</Button>  
+        <Button  type='submit'> Sign in</Button>  
       <div className='move'> <Button  type='button' buttonType='google' onClick={logGoogle}>Google sign in</Button> </div> 
        
     </form>

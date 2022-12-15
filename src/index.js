@@ -2,16 +2,27 @@ import React from 'react';
 import  ReactDOM  from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './index.scss';
+
 import App from './App';
+import { UserProvider } from './context/user.context';
 import reportWebVitals from './reportWebVitals';
 import {createRoot} from 'react-dom/client';
-
+import { ProductsProvider } from './context/products.context';
+import { CartProvider } from './cart.context';
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <App />
+      <UserProvider>
+      <ProductsProvider>
+      <CartProvider>
+         <App />
+       </CartProvider>
+      </ProductsProvider>
+     </UserProvider>
+     
+   
     </BrowserRouter>
   </React.StrictMode>
 );
