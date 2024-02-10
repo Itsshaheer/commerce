@@ -75,7 +75,7 @@ function Signin() {
       <div className='move'> <button className=' w-full mb-6 bg-transparent hover:bg-red-700 text-red-700 font-semibold hover:text-black py-2 px-4 border border-red-500 hover:border-transparent rounded' type='button'  onClick={logGoogle}>Google Sign In</button> </div> 
       
     </form>
-        <button className='bg-transparent bg-black  font-semibold text-white py-2 px-4 border border-black hover:border-transparent rounded'>
+        <button className='bg-transparent bg-black  font-semibold text-black py-2 px-4 border border-black hover:border-transparent rounded hover:bg-slate-500'>
         <Link to='/auth'> Already have an account? </Link> </button>
     </div>
   )
