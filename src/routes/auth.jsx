@@ -10,7 +10,7 @@ import Signin from '../signin'
        
   return (
     <div className='auth-container'>
-    <Signin />
+    
 <Signupform/>
     </div>
   )

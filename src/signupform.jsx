@@ -4,6 +4,7 @@ import Forminput from './form-input'
 import Button from './button'
 import './signupform.scss'
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth, signinAuthUserWithEmailAndPassword } from './firebase'
+import { Link } from 'react-router-dom'
 const defaultformfield= {
     displayName:'',
     email:'',
@@ -49,8 +50,8 @@ function Signupform() {
     }
   return (
     <div className='sign-up-container'>
-        <h2> Dont have an account?</h2>
-        <h1>Sign Up with Email And Password</h1>
+      
+        <h1 className='text-3xl text-center mt-6 font-bold'>Sign Up with Email And Password</h1>
     <form onSubmit={handlesubmit}>
         <Forminput
         label='Display Name'
@@ -58,14 +59,15 @@ function Signupform() {
 
        
         <Forminput
-        label='email' type='email' required  onChange={handlechange} name='email' value={email}/>
+        label='Email' type='email' required  onChange={handlechange} name='email' value={email}/>
         
         <Forminput
-        label='password' type='password' required  onChange={handlechange} name='password' value={password}/>
+        label='Password' type='password' required  onChange={handlechange} name='password' value={password}/>
         <Forminput
-        label='confirmpassword' type='password' required  onChange={handlechange} name='confirmpassword' value={confirmpassword}/>
-        <Button  type='submit'>Sign Up</Button>
-
+        label='Confirm Password' type='password' required  onChange={handlechange} name='confirmpassword' value={confirmpassword}/>
+        <button className=' w-full mb-6 bg-transparent hover:bg-red-700 text-red-700 font-semibold hover:text-black py-2 px-4 border border-red-500 hover:border-transparent rounded'  type='submit'>Sign Up</button>
+        <button className=' w-full bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'> 
+    <a className='w-full mb-6'href="/signin">Don't Have An Account ?</a> </button>
     </form>
     
     </div>

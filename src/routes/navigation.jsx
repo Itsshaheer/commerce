@@ -26,7 +26,7 @@ function Navigation() {
         {
           currentUser ? (
             <span className='nav-link' onClick={signOutUser}>SIGN OUT</span>)
-            : (<Link className='nav-link' to='/auth'>
+            : (<Link className='nav-link' to='/signin'>
             SIGN IN
         </Link>
           )

@@ -4,6 +4,7 @@ import Button from './button'
 import './signin.scss'
 
 import { signInWithGooglePopup, createUserDocumentFromAuth, signinAuthUserWithEmailAndPassword } from './firebase'
+import { Link } from 'react-router-dom'
 const defaultformfield= {
     
     email:'',
@@ -55,26 +56,27 @@ function Signin() {
         const {name, value}=event.target
         setformfields({...formfields,[name]:value})
     
-    }
-  return (
+    }  
+  return (  
     <div className='sign-up-container'>
-        <h2> Already have an account?</h2>
-        <h1>Sign In with Email And Password</h1>
+    
+        <h1 className='text-3xl text-center mt-6 font-bold'>Sign In with Email And Password</h1>
     <form onSubmit={handlesubmit}>
      
 
        
         <Forminput
-        label='email' type='email' required  onChange={handlechange} name='email' value={email}/>
+        label='Email' type='email' required  onChange={handlechange} name='email' value={email}/>
         
         <Forminput
-        label='password' type='password' required  onChange={handlechange} name='password' value={password}/>
+        label='Password' type='password' required  onChange={handlechange} name='password' value={password}/>
        
-        <Button  type='submit'> Sign in</Button>  
-      <div className='move'> <Button  type='button' buttonType='google' onClick={logGoogle}>Google sign in</Button> </div> 
-       
+        <Button className="w-full bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" type='submit'> Sign in</Button>  
+      <div className='move'> <button className=' w-full mb-6 bg-transparent hover:bg-red-700 text-red-700 font-semibold hover:text-black py-2 px-4 border border-red-500 hover:border-transparent rounded' type='button'  onClick={logGoogle}>Google Sign In</button> </div> 
+      
     </form>
-    
+        <button className='bg-transparent bg-black  font-semibold text-white py-2 px-4 border border-black hover:border-transparent rounded'>
+        <Link to='/auth'> Already have an account? </Link> </button>
     </div>
   )
 }
