@@ -7,7 +7,7 @@ import {getFirestore,doc,getDoc,setDoc,collection,writeBatch, query, getDocs} fr
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCmbkXDTV7urZe_wYz1iN6_u2xj-vCrrRY",
-  authDomain: "ecommerce-110a4.firebaseapp.com",
+  authDomain: "https://commerce-xi-opal.vercel.app/",
   projectId: "ecommerce-110a4",
   storageBucket: "ecommerce-110a4.appspot.com",
   messagingSenderId: "959211395029",
