@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard Component matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="product-card-container"
+  >
+    <img
+      src="https://example.com/product.jpg"
+    />
+    <div
+      class="footer"
+    >
+      <span
+        class="name"
+      >
+        Test Product 
+      </span>
+      <span
+        class="price"
+      >
+         100
+      </span>
+    </div>
+    <button
+      class="button-container inverted"
+    >
+      Add To Cart 
+    </button>
+  </div>
+</DocumentFragment>
+`;

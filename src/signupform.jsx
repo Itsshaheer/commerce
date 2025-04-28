@@ -67,7 +67,7 @@ function Signupform() {
         label='Confirm Password' type='password' required  onChange={handlechange} name='confirmpassword' value={confirmpassword}/>
         <button className=' w-full mb-6 bg-transparent hover:bg-red-700 text-red-700 font-semibold hover:text-black py-2 px-4 border border-red-500 hover:border-transparent rounded'  type='submit'>Sign Up</button>
         <button className=' w-full bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded'> 
-    <a className='w-full mb-6'href="/signin">Don't Have An Account ?</a> </button>
+    <a className='w-full mb-6 px-4'href="/signin">Already have an account ?</a> </button>
     </form>
     
     </div>

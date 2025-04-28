@@ -19,7 +19,14 @@ function Navigation() {
         <Link className='logo-container' to='/'>
     <Crown className='logo'/>
     </Link>
+    
     <div className='nav-links-container'>
+      { currentUser? (
+    <h2 className='font-bold'>Welcome, {currentUser?.displayName}!</h2>)
+    : (
+      <h2 className='font-bold'>Welcome, Guest!</h2>
+    )
+      }
         <Link className='nav-link' to='/shop'>
             SHOP
         </Link>

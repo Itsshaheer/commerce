@@ -1,9 +1,13 @@
 import {createContext, useState,useEffect} from 'react'
+
+
 const addCartItem=(cartItems,productToAdd) =>{
 const existingCartItem = cartItems.find(
     (cartItem) =>cartItem.id===productToAdd.id
 );
+console.log(existingCartItem)
 if(existingCartItem){
+
 return cartItems.map((cartItem) => 
 cartItem.id===productToAdd.id
 ?{...cartItem, quantity:cartItem.quantity + 1}
@@ -17,7 +21,7 @@ const removeCartItem= (cartItems, cartItemToRemove) =>{
         (cartItem) =>cartItem.id===cartItemToRemove.id
     );
     if(existingCartItem.quantity=== 1){
-        return cartItems.filter(cartItem => cartItem.id !=cartItemToRemove.id)
+        return cartItems.filter(cartItem => cartItem.id != cartItemToRemove.id)
     }
     return  cartItems.map((cartItem) => 
     cartItem.id=== cartItemToRemove.id
