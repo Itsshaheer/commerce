@@ -27,12 +27,12 @@ function Navigation() {
       <h2 className='font-bold'>Welcome, Guest!</h2>
     )
       }
-        <Link className='nav-link' to='/shop'>
+        <Link className='nav-link hover:text-blue-600' to='/shop'>
             SHOP
         </Link>
         {
           currentUser ? (
-            <span className='nav-link' onClick={signOutUser}>SIGN OUT</span>)
+            <span className='nav-link hover:text-blue-600' onClick={signOutUser}>SIGN OUT</span>)
             : (<Link className='nav-link' to='/signin'>
             SIGN IN
         </Link>
